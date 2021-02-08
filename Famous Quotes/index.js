@@ -9,7 +9,7 @@ btn.addEventListener('click', getQuote);
 
 async function getQuote() {
     const response = await fetch('http://quotable.io/random');
-    const data = await response.json();
-    quote.innerHTML = `"${data.content}"`;
-    authorName.innerHTML = `Author: ${data.author}`;
+    const quote = await response.json();
+    quote.innerHTML = `"${quote.content}"`;
+    authorName.innerHTML = `Author: ${quote.author}`;
 }
